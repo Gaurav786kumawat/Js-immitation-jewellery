@@ -53,7 +53,7 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Hi There,%0ANew Jewellery Enquiry%0A%0AName: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email)}%0APhone: ${encodeURIComponent(formData.phone)}%0AJewellery Type: ${encodeURIComponent(formData.jewelleryType)}%0ABudget: ${encodeURIComponent(formData.budget)}%0AMessage: ${encodeURIComponent(formData.message)}`;
-    window.open(`https://wa.me/917878583600?text=${message}`, '_blank');
+    window.open(`https://wa.me/917568387383?text=${message}`, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
