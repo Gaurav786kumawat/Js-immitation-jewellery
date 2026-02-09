@@ -44,11 +44,24 @@ export default function Home() {
 
   const smoothScrollTo = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setMobileMenuOpen(false);
-    }
+    if (!element) return;
+
+    // Close menu first
+    setMobileMenuOpen(false);
+
+    // Wait for menu animation close
+    setTimeout(() => {
+      const navbarHeight = 90; // adjust if needed
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+
+      window.scrollTo({
+        top: elementPosition - navbarHeight,
+        behavior: "smooth",
+      });
+    }, 250);
   };
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
